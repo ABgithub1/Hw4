@@ -12,6 +12,8 @@ class NoteViewHolder(private val binding: ItemBinding, private val itemClick: (N
             root.setOnClickListener {
                 itemClick(item)
             }
+            title.text = item.title
+            date.text = item.date
         }
     }
 

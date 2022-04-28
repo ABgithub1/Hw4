@@ -4,9 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Hw4/app/src/main/res/layout/activity_main.xml" value="0.259963768115942" />
+        <entry key="..\:/Hw4/app/src/main/res/layout/fragment_add_note.xml" value="0.2536231884057971" />
+        <entry key="..\:/Hw4/app/src/main/res/layout/fragment_details.xml" value="0.24048913043478262" />
+        <entry key="..\:/Hw4/app/src/main/res/layout/fragment_dialog_change.xml" value="0.33" />
         <entry key="..\:/Hw4/app/src/main/res/layout/fragment_item_list.xml" value="0.259963768115942" />
         <entry key="..\:/Hw4/app/src/main/res/layout/fragment_note.xml" value="0.259963768115942" />
         <entry key="..\:/Hw4/app/src/main/res/layout/item.xml" value="0.259963768115942" />
+        <entry key="..\:/Hw4/app/src/main/res/menu/bottom_menu.xml" value="0.3625" />
       </map>
     </option>
   </component>

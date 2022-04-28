@@ -19,7 +19,7 @@ interface NoteDao {
     fun findByTitle(title: String): Note
 
     @Insert
-    fun insertAll(vararg note: Note)
+    fun insertAll(note: Note)
 
     @Delete
     fun delete(note: Note)
