@@ -76,7 +76,7 @@ class NoteFragment : Fragment() {
             ItemTouchHelper(swipeToDelCallback).attachToRecyclerView(recyclerview)
             adapter.submitList(getListFromDatabase())
             recyclerview.layoutManager = LinearLayoutManager(requireContext())
-            recyclerview.addSpaceDecoration(8)
+            recyclerview.addSpaceDecoration(2)
             recyclerview.adapter = adapter
 
         }

@@ -1,17 +1,17 @@
 package com.example.hw4.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.room.Room
-import com.example.hw4.R
 import com.example.hw4.data.Note
 import com.example.hw4.databinding.FragmentAddNoteBinding
-import com.example.hw4.databinding.FragmentNoteBinding
 import com.example.hw4.room.NoteDatabase
+import com.example.hw4.validator.DataValidator
+import com.example.hw4.validator.Validator
 
 class AddNoteFragment : Fragment() {
 
@@ -40,13 +40,32 @@ class AddNoteFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
+            val dataValidator: Validator = DataValidator()
             buttonAdd.setOnClickListener {
                 val title = editTitle.text.toString()
                 val description = editDescription.text.toString()
                 val date = editDate.text.toString()
-
-                database.noteDao()
-                    .insertAll(Note(title = title, description = description, date = date))
+                if (dataValidator.isValid(date)) {
+                    database.noteDao()
+                        .insertAll(Note(title = title, description = description, date = date))
+                    editTitle.text = null
+                    editDescription.text = null
+                    editDate.text = null
+                    val successToast = Toast.makeText(
+                        requireContext(),
+                        "Successfully",
+                        Toast.LENGTH_SHORT
+                    )
+                    successToast.show()
+                } else {
+                    editDate.text = null
+                    val dataToast = Toast.makeText(
+                        requireContext(),
+                        "Incorrect data, try dd.mm.yyyy",
+                        Toast.LENGTH_SHORT
+                    )
+                    dataToast.show()
+                }
             }
         }
     }

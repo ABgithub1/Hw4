@@ -41,8 +41,8 @@
         android:id="@+id/dialogChangeFragment2"
         android:name="com.example.hw4.fragments.DialogChangeFragment"
         android:label="DialogChangeFragment" >
-        <argument
-            android:name="id"
-            app:argType="long" />
+        <action
+            android:id="@+id/action_dialogChangeFragment2_to_noteFragment"
+            app:destination="@id/noteFragment" />
     </dialog>
 </navigation>

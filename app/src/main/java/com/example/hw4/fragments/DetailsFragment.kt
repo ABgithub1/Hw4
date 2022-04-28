@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.hw4.R
@@ -34,8 +35,12 @@ class DetailsFragment : Fragment() {
             descriptionDetails.text = args.description
             dateDetails.text = args.date
 
+            val dialog = DialogChangeFragment()
+            val bundle = Bundle()
+            bundle.putLong("idKey", args.id)
+            dialog.arguments = bundle
+
             editButton.setOnClickListener {
-                val dialog = DialogChangeFragment()
                 dialog.show(childFragmentManager, "edit")
             }
 

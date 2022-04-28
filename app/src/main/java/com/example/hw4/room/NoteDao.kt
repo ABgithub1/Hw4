@@ -15,6 +15,9 @@ interface NoteDao {
     @Query("SELECT * FROM note WHERE id IN (:noteId)")
     fun loadAllByIds(noteId: IntArray): List<Note>
 
+    @Query("SELECT * FROM note WHERE id LIKE :id") ///
+    fun getNoteById(id: Long): Note
+
     @Query("SELECT * FROM note WHERE title LIKE :title")
     fun findByTitle(title: String): Note
 
